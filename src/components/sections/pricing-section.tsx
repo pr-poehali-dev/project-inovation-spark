@@ -1,20 +1,20 @@
 import { motion } from "framer-motion"
 import { Check } from "lucide-react"
 
-const plans = [
+const categories = [
   {
-    name: "Старт",
-    price: "1 200",
-    period: " руб/мес",
-    description: "Для личного портфолио",
-    features: ["5 страниц", "Свой домен", "Базовая аналитика", "Поддержка по email"],
+    name: "Повседневная",
+    price: "от 2 990",
+    period: " руб",
+    description: "Кроссовки, кеды, лоферы",
+    features: ["Натуральные материалы", "Размеры 36–47", "Гарантия 6 месяцев", "Бесплатный обмен"],
   },
   {
-    name: "Про",
-    price: "2 900",
-    period: " руб/мес",
-    description: "Для растущих авторов",
-    features: ["Безлимит страниц", "Приоритет поддержки", "Расширенная аналитика", "Свой брендинг", "Работа в команде"],
+    name: "Премиум",
+    price: "от 7 990",
+    period: " руб",
+    description: "Брендовая и кожаная обувь",
+    features: ["Брендовые модели", "Натуральная кожа", "Гарантия 12 месяцев", "Бесплатная доставка", "Персональный подбор"],
     popular: true,
   },
 ]
@@ -29,38 +29,38 @@ export function PricingSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Простые и понятные цены</h2>
-          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Начните бесплатно, платите когда готовы.</p>
+          <h2 className="text-3xl md:text-5xl font-serif text-foreground">Цены на любой вкус</h2>
+          <p className="text-muted-foreground mt-4 max-w-md mx-auto">Качественная обувь для всей семьи — приходите в магазин или звоните нам.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-          {plans.map((plan, i) => (
+          {categories.map((cat, i) => (
             <motion.div
               key={i}
-              className={`relative bg-background rounded-xl p-8 ticket-edge ${plan.popular ? "ring-2 ring-primary" : ""}`}
+              className={`relative bg-background rounded-xl p-8 ticket-edge ${cat.popular ? "ring-2 ring-primary" : ""}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
               data-clickable
             >
-              {plan.popular && (
+              {cat.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lime text-foreground text-xs font-medium px-3 py-1 rounded-full">
-                  Популярный
+                  Популярный выбор
                 </span>
               )}
 
               <div className="text-center pb-6 border-b border-dashed border-border">
-                <h3 className="font-serif text-xl text-foreground">{plan.name}</h3>
+                <h3 className="font-serif text-xl text-foreground">{cat.name}</h3>
                 <div className="mt-4 flex items-baseline justify-center gap-1">
-                  <span className="text-4xl md:text-5xl font-serif text-foreground">{plan.price}</span>
-                  <span className="text-muted-foreground">{plan.period}</span>
+                  <span className="text-4xl md:text-5xl font-serif text-foreground">{cat.price}</span>
+                  <span className="text-muted-foreground">{cat.period}</span>
                 </div>
-                <p className="text-muted-foreground text-sm mt-2">{plan.description}</p>
+                <p className="text-muted-foreground text-sm mt-2">{cat.description}</p>
               </div>
 
               <ul className="mt-6 space-y-3">
-                {plan.features.map((feature, j) => (
+                {cat.features.map((feature, j) => (
                   <li key={j} className="flex items-center gap-3 text-foreground">
                     <Check className="w-4 h-4 text-primary flex-shrink-0" />
                     <span className="text-sm">{feature}</span>
@@ -70,12 +70,12 @@ export function PricingSection() {
 
               <button
                 className={`w-full mt-8 py-3 px-6 rounded-lg font-medium transition-colors ${
-                  plan.popular
+                  cat.popular
                     ? "bg-primary text-primary-foreground hover:bg-primary/90"
                     : "bg-secondary text-foreground hover:bg-accent/30"
                 }`}
               >
-                Начать
+                Узнать наличие
               </button>
             </motion.div>
           ))}

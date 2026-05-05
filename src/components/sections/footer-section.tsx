@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { motion } from "framer-motion"
 import { ArrowRight } from "lucide-react"
+import Icon from "@/components/ui/icon"
 
 const footerLinks = [
   { label: "Каталог", href: "#" },
@@ -29,7 +30,7 @@ export function FooterSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
             >
-              SHOES.
+              Vinyl.
             </motion.h2>
 
             <nav className="flex flex-wrap gap-6 mt-8">
@@ -73,13 +74,25 @@ export function FooterSection() {
         </div>
 
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm">2025 Магазин обуви, Щёлково. Все права защищены.</p>
-          <div className="flex gap-6">
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm" data-clickable>
-              Конфиденциальность
+          <p className="text-muted-foreground text-sm">2025 Vinyl. Магазин обуви, Щёлково. Все права защищены.</p>
+          <div className="flex gap-3 items-center">
+            <a
+              href="tel:+79055062929"
+              className="text-muted-foreground hover:text-foreground text-sm flex items-center gap-1"
+              data-clickable
+            >
+              <Icon name="Phone" size={14} />
+              +7 (905) 506-29-29
             </a>
-            <a href="#" className="text-muted-foreground hover:text-foreground text-sm" data-clickable>
-              Условия
+            <a
+              href="https://wa.me/79055062929"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-green-500 hover:text-green-400 text-sm flex items-center gap-1"
+              data-clickable
+            >
+              <Icon name="MessageCircle" size={14} />
+              WhatsApp
             </a>
           </div>
         </div>

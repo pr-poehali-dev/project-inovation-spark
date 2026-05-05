@@ -2,9 +2,9 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform } from "framer-motion"
 
 const images = [
-  "/minimal-architecture-portfolio-with-clean-lines.jpg",
-  "/fashion-photography-editorial-black-and-white.jpg",
-  "/modern-ui-design-portfolio-mockup.jpg",
+  "https://cdn.poehali.dev/projects/8596f18f-b8cd-40f6-be84-f8381b929ded/files/579d2d5a-f8dc-40f5-b417-ce324b585dee.jpg",
+  "https://cdn.poehali.dev/projects/8596f18f-b8cd-40f6-be84-f8381b929ded/files/ebdf99ea-1816-4144-99a7-229aa7f3537d.jpg",
+  "https://cdn.poehali.dev/projects/8596f18f-b8cd-40f6-be84-f8381b929ded/files/cd915c9b-5429-4e1d-8c99-3c7d8fdadb68.jpg",
 ]
 
 export function HeroSection() {
@@ -78,7 +78,7 @@ export function HeroSection() {
         transition={{ duration: 1, delay: 0.8 }}
       >
         <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-center text-foreground mix-blend-difference">
-          Обувь, <em className="italic">которая вдохновляет</em>.
+          Vinyl. <em className="italic">Обувь с душой</em>.
         </h1>
         <p className="text-lg md:text-xl text-foreground/70 mix-blend-difference text-center max-w-md">
           Магазин обуви в Щёлково — стиль, качество и комфорт для каждого

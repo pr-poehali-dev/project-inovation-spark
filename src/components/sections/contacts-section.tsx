@@ -73,27 +73,51 @@ export function ContactsSection() {
               <div>
                 <p className="font-medium text-foreground mb-1">Телефон</p>
                 <a
-                  href="tel:+74951234567"
+                  href="tel:+79055062929"
                   className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   data-clickable
                 >
-                  +7 (495) 123-45-67
+                  +7 (905) 506-29-29
                 </a>
               </div>
             </div>
 
-            <motion.a
-              href={yandexMapUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors w-fit mt-2"
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              data-clickable
-            >
-              <Icon name="Map" size={18} />
-              Открыть на Яндекс.Картах
-            </motion.a>
+            <div className="flex gap-3 mt-2 flex-wrap">
+              <motion.a
+                href={yandexMapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-primary-foreground px-6 py-3 rounded-xl font-medium hover:bg-primary/90 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                data-clickable
+              >
+                <Icon name="Map" size={18} />
+                Яндекс.Карты
+              </motion.a>
+              <motion.a
+                href="https://wa.me/79055062929"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-green-500 text-white px-6 py-3 rounded-xl font-medium hover:bg-green-600 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                data-clickable
+              >
+                <Icon name="MessageCircle" size={18} />
+                WhatsApp
+              </motion.a>
+              <motion.a
+                href="tel:+79055062929"
+                className="inline-flex items-center gap-2 bg-secondary text-foreground px-6 py-3 rounded-xl font-medium hover:bg-accent/30 transition-colors"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                data-clickable
+              >
+                <Icon name="Phone" size={18} />
+                Позвонить
+              </motion.a>
+            </div>
           </motion.div>
 
           {/* Map Embed */}
